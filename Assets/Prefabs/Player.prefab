@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7549750942275453570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3606156785264190177}
+  - component: {fileID: 3946482141164050193}
+  m_Layer: 0
+  m_Name: Player Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3606156785264190177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549750942275453570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9176912359916138263}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3946482141164050193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549750942275453570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c35b7358d6c4c44af48415d1fd9929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9176912359916138259
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,9 +57,9 @@ GameObject:
   - component: {fileID: 9176912359916138261}
   - component: {fileID: 9176912359916138260}
   - component: {fileID: 9176912359916138264}
-  - component: {fileID: 9176912359916138265}
   - component: {fileID: 9176912359916138267}
   - component: {fileID: 9176912359916138266}
+  - component: {fileID: 7350632911794671380}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -34,7 +78,8 @@ Transform:
   m_LocalPosition: {x: -7.71, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3606156785264190177}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,20 +163,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &9176912359916138265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9176912359916138259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c35b7358d6c4c44af48415d1fd9929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveInput: 0
-  JumpInput: 0
 --- !u!114 &9176912359916138267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 9176912359916138264}
   moveSpeed: 5
-  PlayerInputController: {fileID: 9176912359916138265}
+  playerInputController: {fileID: 3946482141164050193}
 --- !u!114 &9176912359916138266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +190,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edaf744399e7c404d9c4dc7bfdba5418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInputController: {fileID: 9176912359916138265}
+  playerInputController: {fileID: 3946482141164050193}
   myRigidBody: {fileID: 9176912359916138264}
   jumpForce: 500
+  groundChecker: {fileID: 7350632911794671380}
+--- !u!114 &7350632911794671380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176912359916138259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9955192d0996c45889a86f7ff5297f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckLength: 1
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
