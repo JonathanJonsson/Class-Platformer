@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3606156785264190177}
   - component: {fileID: 3946482141164050193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 9176912359916138267}
   - component: {fileID: 9176912359916138266}
   - component: {fileID: 7350632911794671380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0995d1d3d8c4e3043ab4678158398a4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,7 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9955192d0996c45889a86f7ff5297f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckLength: 1
+  groundCheckLength: 0.6
+  groundCheckRadius: 0.5
   groundLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
