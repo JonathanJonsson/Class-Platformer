@@ -3,16 +3,12 @@ using UnityEngine;
 public class PlayerWalkController : MonoBehaviour
 {
 	
-	public Rigidbody myRigidBody;
-	public float moveSpeed = 5f;
-	
+	[SerializeField] private Rigidbody myRigidBody;
+	[SerializeField] private float moveSpeed = 5f;
+
+	public PlayerInputController PlayerInputController;
 	private void Update()
 	{
-		// Get move input here in Update()
-		var moveInput = Input.GetAxis("Horizontal");
-		
-		//Set move velocity
-		//preferably interact with physics in FixedUpdate()
-		myRigidBody.velocity = new Vector3(moveInput*moveSpeed, myRigidBody.velocity.y, 0) ; 
+		myRigidBody.velocity = new Vector3(PlayerInputController.MoveInput*moveSpeed, myRigidBody.velocity.y, 0) ; 
 	}
 }
