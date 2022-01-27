@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 
 public class PlayerImmediateJumpController : MonoBehaviour
 {
-
 	[SerializeField] private PlayerInputController playerInputController;
 	
 	[SerializeField] private Rigidbody myRigidBody;
@@ -16,7 +14,7 @@ public class PlayerImmediateJumpController : MonoBehaviour
 	private void Update()
 	{
  
-		if (playerInputController.JumpInput && groundChecker.isGrounded)
+		if (playerInputController.JumpInputDown && groundChecker.isGrounded)
 		{
 			myRigidBody.AddForce(Vector3.up * jumpForce);
 		}
