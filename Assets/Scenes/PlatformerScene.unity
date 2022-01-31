@@ -301,6 +301,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862185425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1540492813040840161, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+  m_PrefabInstance: {fileID: 9176912360851242816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284e190ca4fa9e745a3d89ea5accde83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &53206031570330191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,6 +376,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3946482141164050193, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: commandContainer
+      value: 
+      objectReference: {fileID: 1862185425}
+    - target: {fileID: 6004917839719243218, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004917839719243218, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: commandContainer
+      value: 
+      objectReference: {fileID: 1862185425}
     - target: {fileID: 9176912359916138259, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
       propertyPath: m_Name
       value: Player
@@ -413,5 +436,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9176912359916138266, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176912359916138266, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: commandContainer
+      value: 
+      objectReference: {fileID: 1862185425}
+    - target: {fileID: 9176912359916138267, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}
+      propertyPath: commandContainer
+      value: 
+      objectReference: {fileID: 1862185425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d7eeb00287b9e4a8e20be6aa788b34, type: 3}

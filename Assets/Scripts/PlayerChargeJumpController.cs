@@ -5,7 +5,7 @@ public class PlayerChargeJumpController : MonoBehaviour
 
 	
 	[SerializeField]
-	private PlayerInputController playerInputController;
+	private CommandContainer commandContainer;
 
 	[SerializeField]
 	private Rigidbody myRigidBody;
@@ -31,12 +31,12 @@ public class PlayerChargeJumpController : MonoBehaviour
 
 	private void HandleChargedJump()
 	{
-		if (playerInputController.JumpInput)
+		if (commandContainer.JumpCommand)
 		{
 			jumpCharge += Time.deltaTime/chargeTime;
 		}
 
-		if (playerInputController.JumpInputUp)
+		if (commandContainer.JumpCommandUp)
 		{
 			var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
 			jumpCharge = 0f;

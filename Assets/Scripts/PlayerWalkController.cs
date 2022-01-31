@@ -11,7 +11,7 @@ public class PlayerWalkController : MonoBehaviour
 	[SerializeField]
 	private GroundChecker groundChecker;
 
-	public PlayerInputController playerInputController;
+	public CommandContainer commandContainer;
 
 	[SerializeField]
 	private float chargingMoveSpeedFactor = 0.5f;
@@ -25,11 +25,11 @@ public class PlayerWalkController : MonoBehaviour
 	{
 		var currentMoveSpeed = moveSpeed;
 
-		if (playerInputController.JumpInput && groundChecker.isGrounded)
+		if (commandContainer.JumpCommand && groundChecker.isGrounded)
 		{
 			currentMoveSpeed *= chargingMoveSpeedFactor;
 		}
 
-		myRigidBody.velocity = new Vector3(playerInputController.MoveInput*currentMoveSpeed, myRigidBody.velocity.y, 0);
+		myRigidBody.velocity = new Vector3(commandContainer.WalkCommand*currentMoveSpeed, myRigidBody.velocity.y, 0);
 	}
 }
