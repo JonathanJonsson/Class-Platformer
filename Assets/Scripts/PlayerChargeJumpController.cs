@@ -26,25 +26,25 @@ public class PlayerChargeJumpController : MonoBehaviour
 
 	private void Update()
 	{
+		HandleChargedJump();
+	}
+
+	private void HandleChargedJump()
+	{
 		if (playerInputController.JumpInput)
 		{
-
 			jumpCharge += Time.deltaTime/chargeTime;
 		}
 
 		if (playerInputController.JumpInputUp)
-			{
-				var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
-				jumpCharge = 0f;
+		{
+			var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
+			jumpCharge = 0f;
 
-				if (groundChecker.isGrounded)
-				{
-					myRigidBody.AddForce(Vector3.up*jumpForce);
-				}
+			if (groundChecker.isGrounded)
+			{
+				myRigidBody.AddForce(Vector3.up*jumpForce);
 			}
-			
-			
-		
+		}
 	}
-	
 }

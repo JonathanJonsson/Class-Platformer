@@ -13,11 +13,14 @@ public class PlayerImmediateJumpController : MonoBehaviour
 
 	private void Update()
 	{
- 
+		HandleImmediateJump();
+	}
+
+	private void HandleImmediateJump()
+	{
 		if (playerInputController.JumpInputDown && groundChecker.isGrounded)
 		{
-			myRigidBody.AddForce(Vector3.up * jumpForce);
+			myRigidBody.AddForce(Vector3.up*jumpForce);
 		}
-
 	}
 }
