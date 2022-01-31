@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1709678762715914864}
   - component: {fileID: 2736246567810606274}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AIAndInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,8 @@ GameObject:
   - component: {fileID: 6869925962244051171}
   - component: {fileID: 4184777596203559909}
   - component: {fileID: 2055687487660722468}
-  m_Layer: 0
+  - component: {fileID: 1748313182}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9955192d0996c45889a86f7ff5297f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckLength: 0.05
-  groundCheckRadius: 0.5
+  groundCheckLength: 0.1
+  groundCheckRadius: 0.45
   groundLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -195,7 +196,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 6869925962244051171}
-  moveSpeed: 5
+  moveSpeed: 3
   groundChecker: {fileID: 4184777596203559909}
   commandContainer: {fileID: 2736246567810606274}
   chargingMoveSpeedFactor: 0.5
+--- !u!114 &1748313182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212459037203405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2b7e59db5e96140aa690e03d6961f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commandContainer: {fileID: 2736246567810606274}
