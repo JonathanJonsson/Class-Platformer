@@ -8,8 +8,8 @@ public class PlayerChargeJumpController : MonoBehaviour
 	private CommandContainer commandContainer;
 
 	[SerializeField]
-	private Rigidbody myRigidBody;
-
+	private MovementApplier movementApplier;
+	
 	[SerializeField]
 	private GroundChecker groundChecker;
 
@@ -43,7 +43,7 @@ public class PlayerChargeJumpController : MonoBehaviour
 
 			if (groundChecker.isGrounded)
 			{
-				myRigidBody.AddForce(Vector3.up*jumpForce);
+				movementApplier.AddForce(Vector3.up*jumpForce);
 			}
 		}
 	}

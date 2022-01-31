@@ -76,9 +76,11 @@ GameObject:
   - component: {fileID: 9176912359916138260}
   - component: {fileID: 9176912359916138264}
   - component: {fileID: 7350632911794671380}
+  - component: {fileID: 1267665124167934087}
   - component: {fileID: 9176912359916138267}
   - component: {fileID: 6004917839719243218}
   - component: {fileID: 9176912359916138266}
+  - component: {fileID: 853132541}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -199,6 +201,19 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1267665124167934087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176912359916138259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652ae5335fcb2b748b308d69fa8c35e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRigidBody: {fileID: 9176912359916138264}
 --- !u!114 &9176912359916138267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 9176912359916138264}
+  movementApplier: {fileID: 1267665124167934087}
   moveSpeed: 5
   groundChecker: {fileID: 7350632911794671380}
   commandContainer: {fileID: 1540492813040840161}
@@ -229,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandContainer: {fileID: 1540492813040840161}
-  myRigidBody: {fileID: 9176912359916138264}
+  movementApplier: {fileID: 1267665124167934087}
   groundChecker: {fileID: 7350632911794671380}
   maximumJumpForce: 1000
   minimumJumpForce: 100
@@ -247,6 +263,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandContainer: {fileID: 1540492813040840161}
+  movementApplier: {fileID: 1267665124167934087}
   myRigidBody: {fileID: 9176912359916138264}
   jumpForce: 500
   groundChecker: {fileID: 7350632911794671380}
+--- !u!114 &853132541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176912359916138259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db8aa8c28407f54da960eb4b1fd16b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

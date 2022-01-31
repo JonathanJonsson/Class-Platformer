@@ -6,6 +6,9 @@ public class PlayerWalkController : MonoBehaviour
 	private Rigidbody myRigidBody;
 
 	[SerializeField]
+	private MovementApplier movementApplier;
+
+	[SerializeField]
 	private float moveSpeed = 5f;
 
 	[SerializeField]
@@ -29,7 +32,7 @@ public class PlayerWalkController : MonoBehaviour
 		{
 			currentMoveSpeed *= chargingMoveSpeedFactor;
 		}
-
-		myRigidBody.velocity = new Vector3(commandContainer.WalkCommand*currentMoveSpeed, myRigidBody.velocity.y, 0);
+		
+		movementApplier.SetHorizontalVelocity( commandContainer.WalkCommand*currentMoveSpeed ); 
 	}
 }
