@@ -62,7 +62,6 @@ GameObject:
   - component: {fileID: 2998873914778326891}
   - component: {fileID: 6869925962244051171}
   - component: {fileID: 4184777596203559909}
-  - component: {fileID: 6060125139720683543}
   - component: {fileID: 2055687487660722468}
   - component: {fileID: 1748313182}
   m_Layer: 9
@@ -184,19 +183,6 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &6060125139720683543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2465212459037203405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652ae5335fcb2b748b308d69fa8c35e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidBody: {fileID: 6869925962244051171}
 --- !u!114 &2055687487660722468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 6869925962244051171}
-  movementApplier: {fileID: 6060125139720683543}
   moveSpeed: 3
   groundChecker: {fileID: 4184777596203559909}
   commandContainer: {fileID: 2736246567810606274}

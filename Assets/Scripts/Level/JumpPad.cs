@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+ 
+using System;
 using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	[SerializeField]
+	private float jumpForce = 1500f;
+	private void OnTriggerEnter(Collider other)
+	{
+		// var otherRigidbody = other.GetComponent<Rigidbody>();
+		// if (otherRigidbody == null)
+		// 	return;
+		// otherRigidbody.AddForce(transform.up * jumpForce);
+		
+		// if (other.TryGetComponent(out Rigidbody rb))
+		// {
+		// 	rb.AddForce(transform.up * jumpForce);
+		// }
+		
+		other.GetComponent<Rigidbody>()?.AddForce(transform.up * jumpForce);
+	}
+	 
+	
+	
 }
