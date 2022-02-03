@@ -213,10 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 9176912359916138264}
-  moveSpeed: 5
+  walkSpeedSO: {fileID: 11400000, guid: 4a92226920169b347a7761a3596d8052, type: 2}
   groundChecker: {fileID: 7350632911794671380}
   commandContainer: {fileID: 1540492813040840161}
-  chargingMoveSpeedFactor: 0.5
+  chargingWalkSpeedFactor: 0.5
 --- !u!114 &6004917839719243218
 MonoBehaviour:
   m_ObjectHideFlags: 0
