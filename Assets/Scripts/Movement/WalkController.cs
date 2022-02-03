@@ -16,8 +16,7 @@ public class WalkController : MonoBehaviour
 
 	public CommandContainer commandContainer;
 
-	[SerializeField]
-	private float chargingWalkSpeedFactor = 0.5f;
+
 
 	private void Update()
 	{
@@ -30,7 +29,7 @@ public class WalkController : MonoBehaviour
 
 		if (commandContainer.JumpCommand && groundChecker.isGrounded)
 		{
-			currentMoveSpeed *= chargingWalkSpeedFactor;
+			currentMoveSpeed *= walkSpeedSO.ChargingWalkSpeedFactor;
 		}
 		
 		myRigidBody.velocity = new Vector3( commandContainer.WalkCommand*currentMoveSpeed , myRigidBody.velocity.y,0); 
