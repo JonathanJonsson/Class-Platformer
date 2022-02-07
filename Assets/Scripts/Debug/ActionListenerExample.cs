@@ -16,6 +16,7 @@ public class ActionListenerExample : MonoBehaviour
 		actionEmitter.OnEmptyAction += EmptyActionMethod;
 		actionEmitter.OnRandomFloat += RandomFloatActionMethod;
 		actionEmitter.OnTransformAction += TransformActionMethod;
+		actionEmitter.OnMultipleDataAction += MultipleDataMethod;
 	}
 
 	private void UnSubscribe()
@@ -23,6 +24,7 @@ public class ActionListenerExample : MonoBehaviour
 		actionEmitter.OnEmptyAction -= EmptyActionMethod;
 		actionEmitter.OnRandomFloat -= RandomFloatActionMethod;
 		actionEmitter.OnTransformAction -= TransformActionMethod;
+		actionEmitter.OnMultipleDataAction -= MultipleDataMethod;
 
 	}
 
@@ -32,4 +34,6 @@ public class ActionListenerExample : MonoBehaviour
 	private static void RandomFloatActionMethod(float value) => Debug.Log($"Our random float was {value}");
 
 	private static void TransformActionMethod(Transform emittedTransform) => emittedTransform.position += Vector3.up;
+
+	private static void MultipleDataMethod(bool boolValue, int intValue) => Debug.Log($"Our bool is {boolValue} and our int is {intValue}");
 }
