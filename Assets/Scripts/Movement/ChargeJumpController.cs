@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChargeJumpController : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class ChargeJumpController : MonoBehaviour
 
 	private float jumpCharge = 0f;
 
+	[SerializeField]
+	private UnityEvent<float> onChargeJump; 
+
 	private void Update()
 	{
 		HandleChargedJump();
@@ -34,17 +38,21 @@ public class ChargeJumpController : MonoBehaviour
 		if (commandContainer.JumpCommand)
 		{
 			jumpCharge += Time.deltaTime/chargeTime;
+			Mathf.Clamp01(jumpCharge);
 		}
 
 		if (commandContainer.JumpCommandUp)
 		{
 			var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
-			jumpCharge = 0f;
 
 			if (groundChecker.isGrounded)
 			{
+				onChargeJump.Invoke(jumpCharge);
 				myRigidBody.AddForce(Vector3.up*jumpForce);
 			}
+			
+			jumpCharge = 0f;
+
 		}
 	}
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ImmediateJumpController : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class ImmediateJumpController : MonoBehaviour
 
 	[SerializeField]
 	private GroundChecker groundChecker;
- 
+	
+	[SerializeField] private UnityEvent onJump;
+	 
+	
 
 	private void Update()
 	{
@@ -21,6 +25,7 @@ public class ImmediateJumpController : MonoBehaviour
 	{
 		if (commandContainer.JumpCommandDown && groundChecker.isGrounded)
 		{
+			onJump.Invoke();
 			myRigidBody.AddForce(Vector3.up*jumpForce);
 		}
 	}
